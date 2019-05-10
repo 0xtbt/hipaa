@@ -20,7 +20,7 @@
     "chai": "^3.5.0",
     "classnames": "^2.2.5",
     "cpy": "^4.0.1",
-    "css-loader": "^0.23.1",
+    "css-loader": "^1.0.0",
     "del": "^2.2.0",
     "eslint": "^2.10.2",
     "eslint-config-airbnb": "^9.0.1",
@@ -71,7 +71,8 @@
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0",
-    "whatwg-fetch": "^1.0.0"
+    "whatwg-fetch": "^1.0.0",
+    "snyk": "^1.163.1"
   },
   "babel": {
     "presets": [
@@ -104,11 +105,14 @@
     "build": "node tools/build --release",
     "build:debug": "node tools/build",
     "deploy": "node tools/deploy.gh --release",
-    "start": "node tools/start"
+    "start": "node tools/start",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
     "install": "^0.8.1",
     "npm": "^3.10.2"
-  }
+  },
+  "snyk": true
 }
